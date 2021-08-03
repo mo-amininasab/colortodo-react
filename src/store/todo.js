@@ -5,7 +5,7 @@ const initialTodoState = {
   todos: [],
   tempText: "",
   lastId: 0,
-  lastColor: COLORS[Math.floor(Math.random() * COLORS.length)],
+  lastColor: 'blue',
 };
 
 const todoSlice = createSlice({
