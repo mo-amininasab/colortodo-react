@@ -1,6 +1,11 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { todoActions } from "../store/todo";
 
 function Todo() {
+  const todoTitle = useSelector((state) => state.todo.title);
+  const dispatch = useDispatch();
+
   return (
     <div className="flex justify-between px-3 py-3 mx-4 mb-4 items-center bg-gradient-to-r from-blue-500 to-blue-700 rounded-md border-2 border-blue-600">
       <h1 className="text-white">Like and subscribe!!!</h1>
