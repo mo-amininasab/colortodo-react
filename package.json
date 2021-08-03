@@ -2,6 +2,7 @@
   "name": "todo2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mohammad31415.github.io/colortodo-react",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@reduxjs/toolkit": "^1.6.1",
@@ -19,7 +20,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
