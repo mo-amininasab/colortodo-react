@@ -2,11 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const COLORS = ["red", "yellow", "green", "blue", "indigo", "purple", "pink"];
 const initialTodoState = {
-  id: 0,
-  title: "",
-  color: COLORS[Math.floor(Math.random() * COLORS.length)],
-  //   isDeleted: false,
-  isDone: false,
+  todos: [],
+  tempText: "",
+  lastId: 0,
+  lastColor: COLORS[Math.floor(Math.random() * COLORS.length)],
 };
 
 const todoSlice = createSlice({
@@ -20,32 +19,36 @@ const todoSlice = createSlice({
     //   state.isDone = true;
     // },
     addTodoHandler(state) {
-      // set color
-      let index = Math.floor(Math.random() * COLORS.length);
-      if (state.color === COLORS[index]) {
-        state.color = COLORS[index - 1] || COLORS[index + 1];
-      } else {
-        state.color = COLORS[index];
-      }
-
-      // set ID
-      state.id++;
-
-      // set title
-      if (state.title.trim() === "") {
+      // set text
+      let text = "";
+      if (state.tempText.trim() === "") {
         return;
       } else {
-        state.title = state.title.trim();
+        text = state.tempText.trim();
       }
 
-      // store data in local storage
-      localStorage.setItem(
-        `todo${state.id}`,
-        JSON.stringify({ id: state.id, color: state.color, title: state.title })
-      );
+      // set color
+      let index = COLORS.lastIndexOf(state.lastColor);
+      let color;
+      if (index + 1 > 6) {
+        color = "red";
+      } else {
+        color = COLORS[index + 1];
+      }
+
+      state.todos.push({
+        id: state.lastId + 1,
+        text: text,
+        color: color,
+        isDone: false,
+      });
+
+      state.lastId++;
+      state.lastColor = color;
+      state.tempText = "";
     },
     changeTitleHandler(state, action) {
-      state.title = action.payload;
+      state.tempText = action.payload;
     },
   },
 });

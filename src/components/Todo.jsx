@@ -2,13 +2,15 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { todoActions } from "../store/todo";
 
-function Todo() {
+function Todo(props) {
   const todoTitle = useSelector((state) => state.todo.title);
   const dispatch = useDispatch();
 
   return (
-    <div className="flex justify-between px-3 py-3 mx-4 mb-4 items-center bg-gradient-to-r from-blue-500 to-blue-700 rounded-md border-2 border-blue-600">
-      <h1 className="text-white">Like and subscribe!!!</h1>
+    <div
+      className={`flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600`}
+    >
+      <h1 className="text-white">{props.data.text}</h1>
       <div className="flex">
         <svg
           className="w-6 h-6 text-gray-200 mr-1"

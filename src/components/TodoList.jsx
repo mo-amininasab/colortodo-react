@@ -1,22 +1,18 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+
+import Todo from "./Todo";
 
 function TodoList() {
-    
-    const addTodo = todo => {
-        if(!todo.text || /^\s*$/.test(todo.text)) {
-            return;
-        }
+  const data = useSelector((state) => state.todo.todos);
 
-        const newTodos = [todo, ...todos];
-
-        
-    }
-    
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <>
+      {data.map((todo) => (
+        <Todo data={todo} key={todo.id} />
+      ))}
+    </>
+  );
 }
 
-export default TodoList
+export default TodoList;
