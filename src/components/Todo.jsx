@@ -29,13 +29,14 @@ function Todo(props) {
   return (
     isShowTodoList && (
       <div
-        className={`flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600 cursor-text`}
-        onClick={isShowTodoListHandler}
+        className={`flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600`}
       >
-        <h1 className="text-white">{props.data.text}</h1>
-        <div className="flex">
+        <h1 className="text-white" onClick={isShowTodoListHandler}>
+          {props.data.text}
+        </h1>
+        <span className="flex">
           <svg
-            className="w-6 h-6 text-gray-200 mr-1 cursor-pointer"
+            className="w-7 h-7 text-gray-200 mr-2 cursor-pointer"
             onClick={deleteTodoHandler}
             fill="none"
             stroke="currentColor"
@@ -50,7 +51,7 @@ function Todo(props) {
             />
           </svg>
           <svg
-            className="w-6 h-6 text-gray-200 cursor-pointer"
+            className="w-7 h-7 text-gray-200 cursor-pointer"
             onClick={doneHandler}
             fill="none"
             stroke="currentColor"
@@ -64,7 +65,7 @@ function Todo(props) {
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>{" "}
-        </div>
+        </span>
       </div>
     )
   );
