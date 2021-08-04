@@ -73,6 +73,14 @@ const todoSlice = createSlice({
     changeTitleHandler(state, action) {
       state.tempText = action.payload;
     },
+    updateTextHandler(state, action) {
+      const existingItem = state.todos.find(
+        (todo) => todo.id === action.payload.id
+      );
+
+      existingItem.text = action.payload.text;
+      localStorage.setItem("todos", JSON.stringify(state.todos));
+    },
   },
 });
 
