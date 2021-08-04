@@ -5,19 +5,38 @@ const initialTodoState = {
   todos: [],
   tempText: "",
   lastId: 0,
-  lastColor: 'blue',
+  lastColor: "blue",
 };
 
 const todoSlice = createSlice({
   name: "todo",
   initialState: initialTodoState,
   reducers: {
-    // deleteHandler(state) {
-    //   state.isDeleted = true;
-    // },
-    // doneHandler(state) {
-    //   state.isDone = true;
-    // },
+    initializeHandler(state) {
+      const existingTodos = JSON.parse(localStorage.getItem("todos"));
+      const existingLastColor = localStorage.getItem("lastColor");
+      const existingLastId = +localStorage.getItem("lastId");
+
+      if (existingTodos) {
+        state.todos = existingTodos;
+        state.lastColor = existingLastColor;
+        state.lastId = existingLastId;
+      }
+  
+  
+    },
+    
+    deleteHandler(state, action) {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+    doneHandler(state, action) {
+      const existingItem = state.todos.find(
+        (todo) => todo.id === action.payload
+      );
+      existingItem.isDone = true;
+
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
     addTodoHandler(state) {
       // set text
       let text = "";
@@ -46,6 +65,11 @@ const todoSlice = createSlice({
       state.lastId++;
       state.lastColor = color;
       state.tempText = "";
+
+      localStorage.setItem("todos", JSON.stringify(state.todos));
+      localStorage.setItem("lastId", JSON.stringify(state.lastId));
+      localStorage.setItem("lastColor", JSON.stringify(state.lastColor));
+      console.log(JSON.parse(localStorage.getItem('todos')));
     },
     changeTitleHandler(state, action) {
       state.tempText = action.payload;

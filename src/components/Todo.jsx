@@ -1,10 +1,17 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { todoActions } from "../store/todo";
 
 function Todo(props) {
-  const todoTitle = useSelector((state) => state.todo.title);
   const dispatch = useDispatch();
+
+  const deleteTodoHandler = (event) => {
+    dispatch(todoActions.deleteHandler(props.data.id));
+  };
+
+  const doneHandler = (event) => {
+    dispatch(todoActions.doneHandler(props.data.id));
+  };
 
   return (
     <div
@@ -13,7 +20,8 @@ function Todo(props) {
       <h1 className="text-white">{props.data.text}</h1>
       <div className="flex">
         <svg
-          className="w-6 h-6 text-gray-200 mr-1"
+          className="w-6 h-6 text-gray-200 mr-1 cursor-pointer"
+          onClick={deleteTodoHandler}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -27,7 +35,8 @@ function Todo(props) {
           />
         </svg>
         <svg
-          className="w-6 h-6 text-gray-200"
+          className="w-6 h-6 text-gray-200 cursor-pointer"
+          onClick={doneHandler}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
