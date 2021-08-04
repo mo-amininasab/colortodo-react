@@ -26,10 +26,12 @@ function Todo(props) {
     );
   };
 
+  const classes = `flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600`;
+
   return (
     isShowTodoList && (
       <div
-        className={`flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600`}
+        className={classes}
       >
         <h1 className="text-white" onClick={isShowTodoListHandler}>
           {props.data.text}
