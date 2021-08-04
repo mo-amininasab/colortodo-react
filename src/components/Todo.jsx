@@ -15,7 +15,7 @@ function Todo(props) {
 
   return (
     <div
-      className={`flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600`}
+      className={`flex justify-between px-3 py-3 mx-4 mb-3 items-center bg-gradient-to-r from-${props.data.color}-500 to-${props.data.color}-700 rounded-md border-2 border-${props.data.color}-600 cursor-text`}
     >
       <h1 className="text-white">{props.data.text}</h1>
       <div className="flex">

@@ -69,7 +69,6 @@ const todoSlice = createSlice({
       localStorage.setItem("todos", JSON.stringify(state.todos));
       localStorage.setItem("lastId", JSON.stringify(state.lastId));
       localStorage.setItem("lastColor", JSON.stringify(state.lastColor));
-      console.log(JSON.parse(localStorage.getItem("todos")));
     },
     changeTitleHandler(state, action) {
       state.tempText = action.payload;

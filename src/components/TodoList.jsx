@@ -14,7 +14,7 @@ function TodoList() {
   }, []);
 
   return (
-    <div>
+    <div className='flex flex-col'>
       {data.map((todo) => (
         <Todo data={todo} key={todo.id} />
       ))}

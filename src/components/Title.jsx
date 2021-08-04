@@ -2,7 +2,7 @@ import React from 'react'
 
 function Title() {
     return (
-        <h1 className='flex-shrink text-white font-semibold text-lg sm:text-xl md:text-2xl text-center mb-6'>
+        <h1 className='flex-shrink text-white font-semibold text-lg sm:text-xl md:text-2xl text-center mb-6 mt-4'>
             What's the Plan for Today?
         </h1>
     )
