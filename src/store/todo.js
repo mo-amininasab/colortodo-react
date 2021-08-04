@@ -49,8 +49,8 @@ const todoSlice = createSlice({
       // set color
       const COLORS = ["red", "yellow", "green", "blue", "indigo", "purple", "pink"];
       let index = COLORS.lastIndexOf(state.lastColor);
-      let color;
-      if (index + 1 > 6) {
+      let color = "";
+      if ((index + 1) > 6) {
         color = "red";
       } else {
         color = COLORS[index + 1];
