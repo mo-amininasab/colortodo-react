@@ -57,6 +57,7 @@ const todoSlice = createSlice({
         console.log('color in else');
       }
       console.log('color in no where');
+      console.log(color);
 
       state.todos.push({
         id: state.lastId + 1,
