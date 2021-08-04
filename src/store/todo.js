@@ -22,12 +22,12 @@ const todoSlice = createSlice({
         state.lastColor = existingLastColor;
         state.lastId = existingLastId;
       }
-  
-  
     },
-    
+
     deleteHandler(state, action) {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+
+      localStorage.setItem("todos", JSON.stringify(state.todos));
     },
     doneHandler(state, action) {
       const existingItem = state.todos.find(
@@ -69,7 +69,7 @@ const todoSlice = createSlice({
       localStorage.setItem("todos", JSON.stringify(state.todos));
       localStorage.setItem("lastId", JSON.stringify(state.lastId));
       localStorage.setItem("lastColor", JSON.stringify(state.lastColor));
-      console.log(JSON.parse(localStorage.getItem('todos')));
+      console.log(JSON.parse(localStorage.getItem("todos")));
     },
     changeTitleHandler(state, action) {
       state.tempText = action.payload;
