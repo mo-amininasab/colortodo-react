@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {random} from 'mathjs'
 
 const initialTodoState = {
   todos: [],
@@ -52,9 +51,12 @@ const todoSlice = createSlice({
       let color = "";
       if ((index + 1) > 6) {
         color = "red";
+        console.log('color in if');
       } else {
         color = COLORS[index + 1];
+        console.log('color in else');
       }
+      console.log('color in no where');
 
       state.todos.push({
         id: state.lastId + 1,
