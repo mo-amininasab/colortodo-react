@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/colortodo-react/static/css/main.6a0b3659.chunk.css",
-    "main.js": "/colortodo-react/static/js/main.0cdaa27c.chunk.js",
-    "main.js.map": "/colortodo-react/static/js/main.0cdaa27c.chunk.js.map",
+    "main.css": "/colortodo-react/static/css/main.289f98d2.chunk.css",
+    "main.js": "/colortodo-react/static/js/main.2dedc231.chunk.js",
+    "main.js.map": "/colortodo-react/static/js/main.2dedc231.chunk.js.map",
     "runtime-main.js": "/colortodo-react/static/js/runtime-main.f2683c50.js",
     "runtime-main.js.map": "/colortodo-react/static/js/runtime-main.f2683c50.js.map",
     "static/js/2.1051868e.chunk.js": "/colortodo-react/static/js/2.1051868e.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.71e1b1cb.chunk.js": "/colortodo-react/static/js/3.71e1b1cb.chunk.js",
     "static/js/3.71e1b1cb.chunk.js.map": "/colortodo-react/static/js/3.71e1b1cb.chunk.js.map",
     "index.html": "/colortodo-react/index.html",
-    "static/css/main.6a0b3659.chunk.css.map": "/colortodo-react/static/css/main.6a0b3659.chunk.css.map",
+    "static/css/main.289f98d2.chunk.css.map": "/colortodo-react/static/css/main.289f98d2.chunk.css.map",
     "static/js/2.1051868e.chunk.js.LICENSE.txt": "/colortodo-react/static/js/2.1051868e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f2683c50.js",
     "static/js/2.1051868e.chunk.js",
-    "static/css/main.6a0b3659.chunk.css",
-    "static/js/main.0cdaa27c.chunk.js"
+    "static/css/main.289f98d2.chunk.css",
+    "static/js/main.2dedc231.chunk.js"
   ]
 }
