@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {random} from 'mathjs'
 
-const COLORS = ["red", "yellow", "green", "blue", "indigo", "purple", "pink"];
 const initialTodoState = {
   todos: [],
   tempText: "",
@@ -47,6 +47,7 @@ const todoSlice = createSlice({
       }
 
       // set color
+      const COLORS = ["red", "yellow", "green", "blue", "indigo", "purple", "pink"];
       let index = COLORS.lastIndexOf(state.lastColor);
       let color;
       if (index + 1 > 6) {
